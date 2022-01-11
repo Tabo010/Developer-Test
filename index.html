@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+
+table{
+  border-collapse:separate;
+  border-spacing:1em;
+}
+
+#input-field{
+  width: 100%;
+  padding: 10px 10px;
+  display: inline-block;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#provinceSelection, #countrySelection{
+  width: 100%;
+  height: 40px;
+  display: inline-block;
+  padding: 5px 5px;
+  font-size: 14px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#register-button{
+  width: 100%;
+  background-color: green;
+  padding: 10px 10px;
+  color: white;
+  text-align: center;
+  border-radius: 12px;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+#register-button:hover {
+  background-color: #4CAF50;
+}
+
+</style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="form.js"></script>
+  <title>Sign Up Form</title>
+</head>
+<body>
+
+  <center>
+    <form method="GET" name="signUpForm" onsubmit="return validateData()">
+      <table style="width:50%">
+        <!-- Row for Heading  -->
+        <tr>
+          <th colspan="2" >Sign Up Form</th>
+        </tr>
+        <!-- Row for First and Last name textfields  -->
+        <tr>
+          <td>
+            <label for="first-name">First name:</label>
+            <input type="text" id="input-field" name="fname" placeholder="First Name" required>
+          </td>
+          <td>
+            <label for="last-name">Last name:</label>
+            <input type="text" id="input-field" name="lname" placeholder="Last Name" required>
+          </td>
+        </tr>
+        <!-- Row for Address 1 textfield  -->
+        <tr>
+          <td colspan="2">
+            <label for="adddress-1">Address</label>
+            <input type="text" id="input-field" name="address 1" placeholder="Off Shamtumbu 10th Street" required>
+          </td>
+
+        </tr>
+        <!-- Row for Address 2 textfield  -->
+        <tr>
+          <td colspan="2">
+            <label for="adddress-2">Address 2</label>
+            <input type="text" id="input-field" name="address 2" placeholder="House no." required>
+          </td>
+        </tr>
+        <!-- Row for Country, Province, -->
+        <tr>
+          <td>
+            <label for="country">Country</label>
+            <select  id="countrySelection" onchange="setProvince(this.options[this.selectedIndex].value)" required>
+              <option value ="" selected = "selected"">Select a Country</option>
+            </select>
+          </td>
+          <td>
+            <label for="province">Province</label>
+            <select id="provinceSelection" required>
+              <option value ="" selected = "selected">Select a Province</option>
+            </select>
+
+          </td>
+
+
+        </tr>
+        <!-- Row City and Zip-code textfields -->
+        <tr>
+          <td>
+            <label for="City">City</label>
+            <input type="text" id="input-field" name="city" placeholder="Lusaka" required>
+          </td>
+          <td>
+            <label for="Zip-Code">Zip Code</label>
+            <input type="number" id="input-field" name="zip-code" placeholder="10002" required>
+          </td>
+        </tr>
+        <!-- Row for Phone Number textfields -->
+        <tr>
+          <td>
+            <label for="Phone">Phone Number</label>
+            <input type="number" id="input-field" name="phone" placeholder="0973238438" required>
+          </td>
+        </tr>
+        <!-- Row for Submit Button -->
+        <tr>
+          <td colspan="2">
+             <button type="submit" id="register-button">Sign Up</button>
+          </td>
+        </tr>
+
+      </table>
+    </form>
+  </center>
+
+
+</body>
+</html>
